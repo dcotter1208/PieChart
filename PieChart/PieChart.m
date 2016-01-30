@@ -16,13 +16,14 @@
     if (self) {
         
         //Set up colorSlices
-        NSArray *colorSlices = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.4], [NSNumber numberWithFloat:0.2], [NSNumber numberWithFloat:0.1], [NSNumber numberWithFloat:0.3], nil];
+        NSArray *colorSlices = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.25], [NSNumber numberWithFloat:0.25], [NSNumber numberWithFloat:0.25], [NSNumber numberWithFloat:0.25], nil];
         
         self.sliceArray = colorSlices;
         
         //set up the colors for the colorSlices
-        NSArray *colors = [NSArray arrayWithObjects:(id)[UIColor orangeColor].CGColor,
+        NSArray *colors = [NSArray arrayWithObjects:
                            (id)[UIColor yellowColor].CGColor,
+                           (id)[UIColor blueColor].CGColor,
                            (id)[UIColor redColor].CGColor,
                            (id)[UIColor greenColor].CGColor, nil];
         
@@ -47,24 +48,29 @@
     // Set the radius of your pie chart
     self.circleRadius = 100;
     
-    for (NSUInteger i = 0; i < [_sliceArray count]; i++) {
+    for (NSUInteger i = 0; i < [self.sliceArray count]; i++) {
         NSLog(@"%lu", i);
         // Determine start angle
         CGFloat startValue = 0;
         for (int k = 0; k < i; k++) {
-            startValue += [[_sliceArray objectAtIndex:k] floatValue];
+            startValue += [[self.sliceArray objectAtIndex:k] floatValue];
         }
         CGFloat startAngle = startValue * 2 * M_PI - M_PI/2;
         
         // Determine end angle
         CGFloat endValue = 0;
         for (int j = (int)i; j >= 0; j--) {
-            endValue += [[_sliceArray objectAtIndex:j] integerValue];
+            endValue += [[self.sliceArray objectAtIndex:j] floatValue];
         }
         
         CGFloat endAngle = endValue * 2 * M_PI - M_PI/2;
         
-        CGContextSetFillColorWithColor(context, (CGColorRef)[_colorsArray objectAtIndex:i]);
+        NSObject *o = [self.colorsArray objectAtIndex:i];
+        
+        NSLog(@"array index: %lu", (unsigned long)[self.colorsArray indexOfObject:o]);
+
+        CGContextSetFillColorWithColor(context, (CGColorRef)[self.colorsArray objectAtIndex:i]);
+        
         CGContextBeginPath(context);
         CGContextMoveToPoint(context, circleCenter.x, circleCenter.y);
         CGContextAddArc(context, circleCenter.x, circleCenter.y, self.circleRadius, startAngle, endAngle, 0);

@@ -11,7 +11,7 @@
 @interface PieChart : UIView
 
 @property (nonatomic, assign) CGFloat circleRadius;
-@property (nonatomic, assign) NSArray *sliceArray;
+@property (nonatomic, retain) NSArray *sliceArray;
 @property (nonatomic, retain) NSArray *colorsArray;
 
 -(void)drawPieChart: (CGContextRef)context;

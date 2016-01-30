@@ -16,6 +16,7 @@
 		C03D05AC1C5D6E0E0057202C /* PieChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D05AB1C5D6E0E0057202C /* PieChartTests.m */; };
 		C03D05B71C5D6E0E0057202C /* PieChartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D05B61C5D6E0E0057202C /* PieChartUITests.m */; };
 		C03D05C61C5D6E5B0057202C /* PieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D05C51C5D6E5B0057202C /* PieChart.m */; };
+		C03D05C81C5D71030057202C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03D05C71C5D71030057202C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C03D05B81C5D6E0E0057202C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C03D05C41C5D6E5B0057202C /* PieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChart.h; sourceTree = "<group>"; };
 		C03D05C51C5D6E5B0057202C /* PieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChart.m; sourceTree = "<group>"; };
+		C03D05C71C5D71030057202C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03D05C81C5D71030057202C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		C03D05851C5D6E0D0057202C = {
 			isa = PBXGroup;
 			children = (
+				C03D05C71C5D71030057202C /* QuartzCore.framework */,
 				C03D05901C5D6E0D0057202C /* PieChart */,
 				C03D05AA1C5D6E0E0057202C /* PieChartTests */,
 				C03D05B51C5D6E0E0057202C /* PieChartUITests */,
