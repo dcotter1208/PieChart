@@ -58,7 +58,7 @@
         
         // Determine end angle
         CGFloat endValue = 0;
-        for (int j = i; j >= 0; j--) {
+        for (int j = (int)i; j >= 0; j--) {
             endValue += [[_sliceArray objectAtIndex:j] integerValue];
         }
         
